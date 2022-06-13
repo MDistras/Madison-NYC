@@ -1,0 +1,37 @@
+@mixin max-width($point) {
+   @if $point == small {
+     @media (max-width: 767px) { @content ; }
+  }
+   @else if $point == medium {
+     @media (max-width: 1023px) { @content ; }
+  }
+  @else if $point == history {
+     @media (max-width: 1100px) and (min-width: 1023px) { @content ; }
+  }
+  @else if $point == ipadpro {
+     @media (max-width: 1024px) { @content ; }
+  }
+  @else if $point == large {
+     @media (max-width: 1199px) { @content ; }
+  }
+  @else if $point == xlarge {
+     @media (min-width: 1800px) { @content ; }
+  }
+  @else if $point == noanimate {
+     @media (max-width: 1366px) { @content ; }
+  }
+  @else if $point == ipadpromax {
+     @media only screen and (max-width: 1366px) and (min-height: 980px) { @content ; }
+  }
+  
+}
+
+
+@mixin min-width($point) {
+ 
+  @if $point == large {
+     @media (min-width: 1640px) { @content ; }
+  }
+ 
+  
+}

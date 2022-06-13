@@ -1,0 +1,12 @@
+.hero{
+	&-holding{
+	    @include max-width('small') {
+			height: 85vh;
+		}
+		.background-image{
+			@include max-width('small') {
+				height: 85vh;
+			}
+		}	
+    }
+}

@@ -1,0 +1,27 @@
+$color-red: #E00003;
+$color-dgrey: #181F2F;
+$color-grey: #636569;
+$color-lgrey: #C6CAD1;
+$color-xlgrey: #eaeaea;
+$color-white: #fff;
+
+
+.bg{
+	&-red{
+		background: $color-red;
+	}
+	&-grey{
+		background: $color-grey;
+	}
+	&-xlgrey{
+		background: $color-xlgrey;
+
+	}
+	&-white{
+		background: white;
+	}
+	&-black{
+		background: black;
+	}
+}
+

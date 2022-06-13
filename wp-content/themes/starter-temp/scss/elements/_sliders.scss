@@ -1,0 +1,152 @@
+/* ------
+-- SLICK DOTS
+--------- */
+.slick-dots{
+	width: 100%;
+	text-align: right;
+	li{
+		width: 8px;
+		height: 8px; 
+		display: inline-block;
+		list-style: none;
+		background: transparent;
+		border: 1px solid black;
+		margin-top: 0;
+		margin-left: 10px;
+		&.active{
+			position: relative;
+			padding: 0;
+			background: black;
+		}
+		button{
+			border-radius: 0;
+			border: 0;
+			opacity: 0;
+		}
+	}
+}
+
+/* ------
+-- SLICK ARROWS
+--------- */
+.slick{
+	&-prev{
+		top: 43%;
+		
+		opacity: 0;
+		transition: 1s all;
+		width: 31px;
+		padding: 20px;
+		height: 31px;
+		left: -4%;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		background-size: 50%;
+		background-position: center center;
+		@include max-width('small') {
+			top: 75%;
+			width: 20px;
+			height: 20px;
+			padding: 10px;
+			left: 84%;
+			display: block !important;
+			opacity: 1 !important;
+		}
+	}
+	&-next{
+		top: 43%;
+		left: 101.5%;
+		opacity: 0;
+		transition: 1s all;
+		width: 31px;
+		height: 31px;
+		padding: 20px;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		background-size: 50%;
+		background-position: center center;
+		@include max-width('small') {
+			top: 75%;
+			width: 20px;
+			height: 20px;
+			padding: 10px;
+			left: 90%;
+			display: block !important;
+			opacity: 1 !important;
+		}
+	}
+
+
+&:hover{
+	.slick{
+		&-prev{
+			display: flex !important;
+			opacity: 1;
+		}
+		&-next{
+			display: flex !important;
+			opacity: 1;
+		}
+	}
+}
+}
+
+
+
+.slide-items{
+	text-align: left;
+	margin-bottom: 30px;
+	.slick-dots{
+		margin-top: 40px;
+		margin-bottom: -40px;
+		@include max-width('small') {
+			margin-bottom: 0;
+		}
+	}
+	img{
+		max-height: 50px;
+		max-width: 50px;
+
+	}
+}
+
+
+
+
+
+.slide-items{
+	p{
+		font-size: 16px;
+		line-height: 24px;
+		text-transform: uppercase;
+		font-family: $font-light;
+	}
+	.font-upper-text{
+		font-size: 18px;
+		font-family: $font-bold;
+	}
+	@include max-width('small') {
+			right: 10px;
+			margin-top: -6px;
+	}
+	@include max-width('small') {
+		margin-bottom: 70px;
+		.slick{
+			&-prev{
+				top: 92%;
+				left: 25px;
+				height: 25px;
+				width: 25px;
+			}
+			&-next{
+				top: 92%;
+				left: 60px !important;
+				height: 25px;
+				width: 25px;
+			}
+		}
+	}
+		
+}

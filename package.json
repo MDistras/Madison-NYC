@@ -1,0 +1,27 @@
+{
+  "name": "wordsearch",
+  "version": "1.0.0",
+  "description": "<!DOCTYPE html> <html lang=\"en\"> <head> \t<meta name=\"viewport\" content=\"width=device-width\" /> \t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> \t<title>WordPress &#8250; ReadMe</title> \t<link rel=\"stylesheet\" href=\"wp-admin/css/install.css?ver=20100228\" type=\"text/css\" /> </head> <body> <h1 id=\"logo\"> \t<a href=\"https://wordpress.org/\"><img alt=\"WordPress\" src=\"wp-admin/images/wordpress-logo.png\" /></a> </h1> <p style=\"text-align: center\">Semantic Personal Publishing Platform</p>",
+  "main": "index.php",
+  "scripts": {
+    "php": "php -S 127.0.0.1:7008",
+    "sass-build": "node-sass wp-content/themes/starter-temp/scss -o wp-content/themes/starter-temp/css",
+    "sass-watch": "node-sass wp-content/themes/starter-temp/scss -o wp-content/themes/starter-temp/css -w",
+    "prefix-build": "postcss wp-content/themes/starter-temp/css/style.css -u autoprefixer -o wp-content/themes/starter-temp/style.css -w",
+    "browser-start": "browser-sync 'http://127.0.0.1:7008' -f='wp-content/themes/*/**.*' -w",
+    "dev": "npm-run-all sass-build --parallel sass-watch browser-start prefix-build php"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "php": "^1.0.2",
+    "postcss": "^8.3.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "browser-sync": "^2.27.7",
+    "node-sass": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^8.3.1"
+  }
+}

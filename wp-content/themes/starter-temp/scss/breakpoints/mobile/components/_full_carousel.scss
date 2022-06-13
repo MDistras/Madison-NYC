@@ -1,0 +1,32 @@
+@include max-width('small') {
+    .full_carousel{
+   
+        .slick-dots{
+        right: 20px;
+        margin-top: -6px;
+        }
+    
+        .slick{
+            &-prev{
+                top: 75%;
+                width: 20px;
+                height: 20px;
+                padding: 10px;
+                left: 84%;
+                display: block !important;
+                opacity: 1 !important;
+                
+            }
+            &-next{
+                top: 75%;
+                width: 20px;
+                height: 20px;
+                padding: 10px;
+                left: 90%;
+                display: block !important;
+                opacity: 1 !important;
+            }
+        }
+    }
+    
+}
