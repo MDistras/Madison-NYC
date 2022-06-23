@@ -1,0 +1,35 @@
+.cta_block {
+  background: $lake;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include respond (large-up) {
+      flex-wrap: wrap;
+    }
+
+    .cta-container {
+      flex:1 0 100%;
+      display: flex;
+      justify-content: center;
+      a {
+        &.cta {
+          padding:15px 25px;
+          font-size:16px;
+          line-height:16px;
+          text-transform: uppercase;
+          font-family:$header-font;
+          text-decoration: none;
+          &:hover {
+            text-decoration: none;
+          }
+          &-white {
+            background:$sand;
+            color:$lake;
+          }
+        }
+      }
+    }
+  }
+}

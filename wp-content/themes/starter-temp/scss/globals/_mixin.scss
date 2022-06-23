@@ -1,0 +1,32 @@
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == large-down {
+      @media only screen and (max-width: 1200px) { @content };
+  }
+  @if $breakpoint == large-up {
+      @media only screen and (min-width: 1200px) { @content };
+  }
+
+  @if $breakpoint == medium-down {
+      @media only screen and (max-width: 992px) { @content };
+  }
+  @if $breakpoint == medium-up {
+      @media only screen and (min-width: 992px) { @content };
+  }
+  @if $breakpoint == medium-only {
+      @media only screen and (min-width: 992px) and (max-width:1200px) { @content };
+  }
+
+  @if $breakpoint == small-only {
+      @media only screen and (min-width: 0px) and (max-width:992px) { @content };
+  }
+}
+
+
+@mixin transition {
+  -webkit-transition: all 0.35s ease;
+  -moz-transition: all 0.35s ease;
+  -ms-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}

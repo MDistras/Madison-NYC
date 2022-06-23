@@ -1,37 +1,30 @@
-@mixin max-width($point) {
-   @if $point == small {
-     @media (max-width: 767px) { @content ; }
-  }
-   @else if $point == medium {
-     @media (max-width: 1023px) { @content ; }
-  }
-  @else if $point == history {
-     @media (max-width: 1100px) and (min-width: 1023px) { @content ; }
-  }
-  @else if $point == ipadpro {
-     @media (max-width: 1024px) { @content ; }
-  }
-  @else if $point == large {
-     @media (max-width: 1199px) { @content ; }
-  }
-  @else if $point == xlarge {
-     @media (min-width: 1800px) { @content ; }
-  }
-  @else if $point == noanimate {
-     @media (max-width: 1366px) { @content ; }
-  }
-  @else if $point == ipadpromax {
-     @media only screen and (max-width: 1366px) and (min-height: 980px) { @content ; }
-  }
-  
-}
+// Colours
+$lake: #2B3241;
+$lake-opacity:rgba(43, 50, 65, 0.9);
+$ada-orange:#FF6933;
+$sand:#EFEDE8;
+$juniper: #3CC88C;
+$bronze: #8A6A50;
+$lake100:#3F4655;
+$lake200:#555C7D;
+$lake300:#394256;
+$tan-02:#D1CAB9;
+$nav-grey: #9498A0;
 
+$white: #fff;
+$black: #000;
+ 
 
-@mixin min-width($point) {
- 
-  @if $point == large {
-     @media (min-width: 1640px) { @content ; }
-  }
- 
-  
-}
+// Typography
+@import url("https://use.typekit.net/irb0gdn.css");
+
+$futura-pt: 'futura-pt';
+$futura-pt-bold: 'futura-pt-bold';
+$futura-pt-book: 'futura-pt-condensed';
+
+$primary-font:$futura-pt, helvetica, arial, sans-serif;
+$primary-font-bold:$futura-pt-bold, helvetica, arial, sans-serif;
+$primary-font-book:$futura-pt-book, helvetica, arial, sans-serif;
+
+$header-font:$primary-font-bold;
+$body-font:$primary-font;
