@@ -1,33 +1,70 @@
 .cta_block {
   background: $lake;
 
+  &.style {
+    &-dark {
+      background: $lake;
+
+      p.title {
+        color: $ada-orange;
+      }
+
+      a.cta {
+        background: $sand;
+        color: $lake;
+      }
+    }
+
+    &-light {
+      background: $sand;
+
+      p.title {
+        color: $lake;
+      }
+
+      a.cta {
+        background: $lake;
+        color: $sand;
+      }
+    }
+  }
+
   .container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
     @include respond (large-up) {
       flex-wrap: wrap;
     }
 
+    p {
+      &.title {
+        margin-bottom: 40px;
+      }
+    }
+
     .cta-container {
-      flex:1 0 100%;
+      flex: 1 0 100%;
       display: flex;
       justify-content: center;
+
       a {
         &.cta {
-          padding:15px 25px;
-          font-size:16px;
-          line-height:16px;
+          padding: 15px 25px;
+          font-size: 16px;
+          line-height: 16px;
           text-transform: uppercase;
-          font-family:$header-font;
+          font-family: $header-font;
           text-decoration: none;
+          // background: $sand;
+          //   color: $lake;
+
           &:hover {
             text-decoration: none;
           }
-          &-white {
-            background:$sand;
-            color:$lake;
-          }
+
+          &-white {}
         }
       }
     }

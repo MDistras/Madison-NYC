@@ -1,4 +1,13 @@
 .image_block {
+  background:$lake;
+  .style {
+    &-dark {
+  background:$lake;
+    }
+    &-dark {
+      background:$sand;
+        }
+  }
   picture {
     display:block;
     img {

@@ -118,6 +118,62 @@ jQuery(document).ready(function($) {
     }]
   });
 
+  $('.carousel_block').on('init', function(event, slick){
+    $(this).find('.slick-dots').addClass('container');
+ });
+
+  $('.carousel_block').slick({
+    infinite: true,
+    dots: true,
+    arrows:true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '100px',
+    responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+        arrows: true,
+      }
+    }]
+  });
+
+  $('.text_carousel').slick({
+    infinite: true,
+    dots: true,
+    arrows:true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    // centerMode: true,
+    // centerPadding: '100px',
+    responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+        arrows: true,
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+        arrows: false,
+      }
+    }]
+  });
+
   
 
   /* ----------

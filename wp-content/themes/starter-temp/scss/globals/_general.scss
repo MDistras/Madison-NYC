@@ -112,9 +112,25 @@ $m-lg:50px;
   }
 }
 
-
+figure {
+  figcaption {
+    &.text-body {
+      color:$white;
+      font-family:$body-font;
+      padding:0 0 15px;
+      font-size:22px;
+      line-height:33px;
+      font-weight:400;
+      padding:0;
+      margin:0;
+      a {
+        color:$white;
+      }
+    }
+  }
+}
 p {
-  &.body-copy {
+  &.body-copy, &.text-body {
     color:$white;
     font-family:$body-font;
     padding:0 0 15px;
@@ -124,5 +140,31 @@ p {
     a {
       color:$white;
     }
+  }
+  &.text-header-xl {
+    font-family: $header-font;
+    // font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+
+    @include respond(large-up) {
+      font-size: 48px;
+      line-height: 57px;
+    }
+  }
+
+  &.text-header-m {
+    font-family: $header-font;
+    // font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+
+    @include respond(large-up) {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+  &.text-center {
+    text-align:center;
   }
 }

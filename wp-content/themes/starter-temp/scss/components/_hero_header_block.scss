@@ -1,0 +1,86 @@
+.hero_header_block {
+  position: relative;
+
+  picture {
+    display: block;
+    width: 100%;
+    height: 90vh;
+    max-height: 70vh;
+    overflow: hidden;
+    min-height: 500px;
+
+    @include respond (large-up) {
+      max-height: 90vh;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    max-width: 730px;
+    padding: 0 25px;
+
+    p {
+      color: $sand;
+      font-family: $header-font;
+
+      &.prepend {
+        font-size: 24px;
+        line-height: 24px;
+
+        @include respond(large-up) {
+          font-size: 40px;
+          line-height: 40px;
+        }
+      }
+
+      &.append {
+        font-size: 20px;
+        line-height: 20px;
+
+        @include respond(large-up) {
+          font-size: 28px;
+          line-height: 28px;
+        }
+      }
+
+      &.title {
+        font-size: 45px;
+        line-height: 58px;
+        margin: 40px 20px;
+
+        @include respond(large-up) {
+          font-size: 80px;
+          line-height: 104px;
+          margin: 40px 10px;
+        }
+      }
+    }
+
+    figure.hero_logo {
+      height: auto;
+      margin: 40px 20px;
+
+      @include respond(large-up) {
+        margin: 40px 10px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
