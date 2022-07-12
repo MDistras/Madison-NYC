@@ -2,7 +2,7 @@
 $block_id = "";
 $block_name = "image_block";
 
-$style = get_sub_field('style');
+$style = "style-" . get_sub_field('style');
 
 $img_acf = get_sub_field('image');
 $img_acf_size = 'full';
@@ -27,7 +27,7 @@ $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $mar
 ?>
 
 <?php if (!empty($img_acf)) { ?>
-    <div class="<?php echo $block_name . " " . $spacing . "" . $style; ?>">
+    <div class="<?php echo $block_name . " " . $spacing . " " . $style; ?>">
         <?php if ($width == "contained") {
             echo "<div class='container'>";
         } ?>

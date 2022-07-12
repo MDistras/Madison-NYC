@@ -130,6 +130,7 @@ add_action(
 
 
 // MD
+//
 
 if (function_exists('acf_add_options_page')) {
 
@@ -141,3 +142,59 @@ if (function_exists('acf_add_options_page')) {
     'redirect'    => false
   ));
 }
+
+
+// Clean menu output
+function clean_custom_menus()
+{
+  $menu_name = 'main-nav'; // specify custom menu slug
+  if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+    $menu = wp_get_nav_menu_object($locations[$menu_name]);
+    $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+    //$menu_list = '<nav>' ."\n";
+    $menu_list .= "\t\t\t\t" . '<ul class="mainmenu">' . "\n";
+    foreach ((array) $menu_items as $key => $menu_item) {
+      $title = $menu_item->title;
+      $url = $menu_item->url;
+      $menu_list .= "\t\t\t\t\t" . '<li><a href="' . $url . '">' . $title . '</a></li>' . "\n";
+    }
+    $menu_list .= "\t\t\t\t" . '</ul>' . "\n";
+    //$menu_list .= "\t\t\t". '</nav>' ."\n";
+  } else {
+    // $menu_list = '<!-- no list defined -->';
+  }
+  echo $menu_list;
+}
+
+
+// Deletes all CSS classes and ids, except for those listed in the array below
+function custom_wp_nav_menu($var)
+{
+  //List of allowed menu classes
+  return is_array($var) ? array_intersect($var, array('first', 'last', 'current_page_item', 'current_page_parent', 'current_page_ancestor', 'current-menu-ancestor', 'active', 'hide-on-mobile')) : '';
+}
+add_filter('nav_menu_css_class', 'custom_wp_nav_menu');
+add_filter('nav_menu_item_id', 'custom_wp_nav_menu');
+add_filter('page_css_class', 'custom_wp_nav_menu');
+
+
+
+// Replaces current-menu-item (and similar classes) with active
+function current_to_active($text)
+{
+  $replace = array('current_page_item' => 'active', 'current_page_parent' => 'active', 'current_page_ancestor' => 'active', 'current-menu-ancestor' => 'active');
+  $text = str_replace(array_keys($replace), $replace, $text);
+  return $text;
+}
+add_filter('wp_nav_menu', 'current_to_active');
+
+
+
+// Deletes empty classes and removes the sub menu class
+function strip_empty_classes($menu)
+{
+  $menu = preg_replace('/ class=""| class="sub-menu"/', '', $menu);
+  return $menu;
+}
+add_filter('wp_nav_menu', 'strip_empty_classes');

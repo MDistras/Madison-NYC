@@ -13,17 +13,30 @@ $copyright_secondary = get_field('copyright_secondary', 'option');
       </figure>
       <nav class="footer primary">
         <span class="bold hide-on-mobile"><?php echo $copyright_secondary; ?></span>
-        <ul class="desktop">
-          <li><a href="#">Legal</a></li>
-          <li class="hide-on-mobile"><a href="#">Privacy Notice</a></li>
-        </ul>
+        <?php
+        if (has_nav_menu('footer-navigation')) {
+          wp_nav_menu(array(
+            'theme_location'    => "footer-navigation",
+            'menu_class'        => "footer-navigation desktop",
+            'menu_id'           => " ",
+            'container'         => false,
+          ));
+        }
+        ?>
         <span class="hide-on-mobile"><?php echo $copyright_notice; ?></span>
       </nav>
       <nav class="footer secondary">
+        <?php
+        if (has_nav_menu('footer-secondary-navigation')) {
+          wp_nav_menu(array(
+            'theme_location'    => "footer-secondary-navigation",
+            'menu_class'        => "footer-secondary-navigation mobile",
+            'menu_id'           => " ",
+            'container'         => false,
+          ));
+        }
+        ?>
         <span class="bold"><?php echo $copyright_secondary; ?></span>
-        <ul class="mobile">
-          <li><a href="#">Privacy Notice</a></li>
-        </ul>
         <span><?php echo $copyright_notice; ?></span>
       </nav>
     </div>

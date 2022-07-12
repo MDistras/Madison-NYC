@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?> class="no-js <?php echo get_field("background_style") . " header-style-" . get_field("header_size"); ?>">
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -20,7 +20,7 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> class="aa">
 
 	<?php
 	$logo = get_field('logo', 'option');
@@ -33,16 +33,19 @@
 			</figure>
 
 			<nav class="desktop">
-				<ul>
-					<li><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
-				</ul>
-			</nav>
 
+
+				<?php
+				if (has_nav_menu('main-navigation')) {
+					wp_nav_menu(array(
+						'theme_location'    => "main-navigation",
+						'menu_class'        => "main-navigation",
+						'menu_id'           => " ",
+						'container'         => false,
+					));
+				}
+				?>
+			</nav>
 			<nav class="mobile">
 				<div class="hamburger-container">
 					<div class="nav-icon3">
@@ -52,6 +55,21 @@
 						<span></span>
 					</div>
 				</div>
+			</nav>
+		</div>
+
+		<div class="mobile-menu">
+			<nav class="mobile">
+				<?php
+				if (has_nav_menu('main-navigation')) {
+					wp_nav_menu(array(
+						'theme_location'    => "main-navigation",
+						'menu_class'        => "main-navigation",
+						'menu_id'           => " ",
+						'container'         => false,
+					));
+				}
+				?>
 			</nav>
 		</div>
 

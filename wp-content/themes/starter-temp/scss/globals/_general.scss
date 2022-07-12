@@ -1,19 +1,46 @@
+html {
+  &.style {
+    &-1 {
+      body {
+        background-image: url(../img/bg-gr_br.svg);
+      }
+    }
+
+    &-2 {
+      body {
+        background-image: url(../img/bg-or_br.svg);
+      }
+    }
+  }
+  &.header-style {
+    &-no-hero {
+      
+    }
+  }
+}
+
 body {
   background-color: $sand;
   background-image: url(../img/bg-gr_br.svg);
   background-repeat: repeat;
   background-attachment: fixed;
   overflow-x: hidden;
+&.modal-active {
+  overflow:hidden;
+}
 }
 
 .container {
   max-width: 100%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding:0 25px;
+  padding: 0 25px;
+  box-sizing: border-box;
+
   &.p-x-none {
-    padding-left:0;
-    padding-right:0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   @include respond(medium-up) {
@@ -55,26 +82,33 @@ $m-lg:50px;
     &-none {
       padding-top: $p-none;
     }
+
     &-small {
       padding-top: $p-sm;
     }
+
     &-medium {
       padding-top: $p-md;
     }
+
     &-large {
       padding-top: $p-lg;
     }
   }
+
   &-bottom {
     &-none {
       padding-bottom: $p-none;
     }
+
     &-small {
       padding-bottom: $p-sm;
     }
+
     &-medium {
       padding-bottom: $p-md;
     }
+
     &-large {
       padding-bottom: $p-lg;
     }
@@ -86,26 +120,33 @@ $m-lg:50px;
     &-none {
       margin-top: $p-none;
     }
+
     &-small {
       margin-top: $p-sm;
     }
+
     &-medium {
       margin-top: $p-md;
     }
+
     &-large {
       margin-top: $p-lg;
     }
   }
+
   &-bottom {
     &-none {
       margin-bottom: $p-none;
     }
+
     &-small {
       margin-bottom: $p-sm;
     }
+
     &-medium {
       margin-bottom: $p-md;
     }
+
     &-large {
       margin-bottom: $p-lg;
     }
@@ -115,32 +156,38 @@ $m-lg:50px;
 figure {
   figcaption {
     &.text-body {
-      color:$white;
-      font-family:$body-font;
-      padding:0 0 15px;
-      font-size:22px;
-      line-height:33px;
-      font-weight:400;
-      padding:0;
-      margin:0;
+      color: $white;
+      font-family: $body-font;
+      padding: 0 0 15px;
+      font-size: 22px;
+      line-height: 33px;
+      font-weight: 400;
+      padding: 0;
+      margin: 0;
+
       a {
-        color:$white;
+        color: $white;
       }
     }
   }
 }
+
 p {
-  &.body-copy, &.text-body {
-    color:$white;
-    font-family:$body-font;
-    padding:0 0 15px;
-    font-size:22px;
-    line-height:33px;
-    font-weight:400;
+
+  &.body-copy,
+  &.text-body {
+    color: $white;
+    font-family: $body-font;
+    padding: 0 0 15px;
+    font-size: 22px;
+    line-height: 33px;
+    font-weight: 400;
+
     a {
-      color:$white;
+      color: $white;
     }
   }
+
   &.text-header-xl {
     font-family: $header-font;
     // font-weight: 700;
@@ -164,7 +211,8 @@ p {
       line-height: 28px;
     }
   }
+
   &.text-center {
-    text-align:center;
+    text-align: center;
   }
 }

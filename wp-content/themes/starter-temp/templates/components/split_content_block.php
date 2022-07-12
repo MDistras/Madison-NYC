@@ -1,6 +1,7 @@
 <?php
 $block_id = "";
 $block_name = "split_content";
+$style = "style-" . get_sub_field('style');
 $subtitle = get_sub_field('subtitle');
 $subtitle_line_1 = $subtitle['line_1'];
 $subtitle_line_2 = $subtitle['line_2'];
@@ -14,7 +15,7 @@ $margin_bottom = "margin-bottom-" . get_sub_field('spacing_margin_bottom');
 $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $margin_bottom;
 ?>
 
-<div class="<?php echo $block_name . " " . $spacing; ?>">
+<div class="<?php echo $block_name . " " . $spacing . " " . $style; ?>">
     <div class="container">
         <div class="subtitle-container">
             <?php if (!empty($subtitle_line_1)) { ?>

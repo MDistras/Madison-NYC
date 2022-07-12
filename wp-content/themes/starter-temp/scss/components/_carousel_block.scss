@@ -3,9 +3,20 @@
   background: $lake;
   width:100%;
 
-  .slide {
-    padding: 0 20px;
+  .container {
 
+    .slick-list {
+      @include respond (large-up) {
+        margin: 0 -20px;
+
+      }
+  }
+
+  .slide {
+    @include respond (large-up) {
+
+    margin: 0 20px;
+    }
     figure {
       aspect-ratio: 1.41 / 1;
       // overflow: hidden;
@@ -28,11 +39,16 @@
       right:0;
       transform:translateY(100%);
       z-index:3;
+      opacity:0;
+      transition:all 0.5s ease;
     }
 
     &.slick-current {
       figure {
         opacity: 1;
+        figcaption {
+          opacity:1;
+        }
       }
     }
   }
@@ -106,4 +122,57 @@
       }
     }
   }
+
+  &.style {
+    &-light {
+      background:$sand;
+      color:$lake;
+
+      .container {
+        &.slick-slider {
+          .slick-list {
+            overflow: visible;
+          }
+          ul.slick-dots {
+            list-style: none;
+            margin-top:45px;
+            &.container {
+              padding-left:0;
+              padding-right:0;
+            }
+      
+            li {
+              display: inline-block;
+              margin-right: 20px;
+      
+              &:last-child {
+                margin-right: 0;
+              }
+      
+              button {
+                background-image: url(../img/other/slick-light-dot.svg);
+              }
+      
+              &.slick-active {
+                button {
+                  background-image: url(../img/other/slick-light-dot-active.svg);
+                }
+              }
+            }
+          }
+      
+          button.slick-arrow {
+            cursor: pointer;
+            &.slick-prev {
+              background-image: url(../img/icons/icon-light-chevron-left.svg);
+            }
+            &.slick-next {
+              background-image: url(../img/icons/icon-light-chevron-right.svg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
 }

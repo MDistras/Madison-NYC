@@ -5,7 +5,10 @@ header {
   top:0;
   left:0;
   width:calc(100% - 30px);
-  z-index: 1;
+  z-index: 2;
+  .header-style-no-hero & {
+    background:$lake;
+  }
 
 
   .container {
@@ -48,6 +51,12 @@ header {
               border-bottom: 2px solid $ada-orange;
             }
           }
+          &.active {
+            a {
+              color: $white;
+              border-bottom: 2px solid $ada-orange;
+            }
+          }
         }
       }
     }
@@ -58,6 +67,7 @@ header {
       top: 50%;
       right: 20px;
       transform: translateY(-50%);
+      z-index:999;
 
       @include respond (large-up) {
         display: none;
@@ -67,6 +77,12 @@ header {
         background: $ada-orange;
         clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
         padding: 10px;
+        transition:all 0.3s ease;
+        cursor: pointer;
+
+        &.open {
+          background: $lake;
+        }
 
 
         .nav-icon3 {
@@ -136,6 +152,53 @@ header {
           top: 50%;
           width: 0%;
           left: 50%;
+        }
+      }
+    }
+  }
+
+  .mobile-menu {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:$ada-orange;
+    z-index:10;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    transition:all 0.3s ease;
+    overflow-y:auto;
+    
+    opacity:0;
+    pointer-events: none;
+    &.active {
+      opacity:1;
+      pointer-events: all;
+    }
+    nav.mobile {
+      ul {
+        list-style:none;
+        padding:0;
+        margin:0;
+        li {
+          font-size:32px;
+          line-height:38px;
+          font-family:$header-font;
+          text-transform: uppercase;
+          margin-bottom:40px;
+          &:last-child {
+            margin-bottom:0;
+          }
+          a {
+            color:$white;
+            text-decoration: none;
+            &:hover {
+            text-decoration: none;
+            }
+          }
         }
       }
     }

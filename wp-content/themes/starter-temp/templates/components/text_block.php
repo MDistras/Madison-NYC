@@ -1,7 +1,7 @@
 <?php
 $block_id = "";
 $block_name = "text_block";
-$style  = get_sub_field('style');
+$style  = "style-" . get_sub_field('style');
 $content  = get_sub_field('content');
 
 // Spacing
@@ -13,7 +13,7 @@ $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $mar
 ?>
 
 <?php if ($content) { ?>
-    <div class="<?php echo $block_name . " " . $spacing; ?>">
+    <div class="<?php echo $block_name . " " . $spacing . " " . $style; ?>">
         <p class="body-copy">
             <?php echo $content; ?>
         </p>

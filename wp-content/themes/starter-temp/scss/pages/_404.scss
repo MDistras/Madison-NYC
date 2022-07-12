@@ -1,0 +1,63 @@
+.four-oh-four {
+  background: $lake;
+  padding: 175px 0;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width:440px;
+
+    p {
+      &.title {
+        color: $ada-orange;
+        font-size: 48px;
+        line-height: 57px;
+        text-align: center;
+
+        @include respond(large-up) {
+          font-size: 80px;
+          line-height: 104px;
+          text-align: left;
+        }
+      }
+
+      &.text-body {
+        text-align: center;
+
+        @include respond (large-up) {
+          text-align: left;
+        }
+      }
+    }
+
+    a {
+      &.cta {
+        padding: 15px 25px;
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: uppercase;
+        font-family: $header-font;
+        text-decoration: none;
+        margin: 10px auto;
+        flex: 0 1 100%;
+        width: max-content;
+        text-align: center;
+
+        background: $sand;
+        color: $lake;
+
+        @include respond (medium-up) {
+          margin: 10px auto 10px 0;
+          flex: 0 1 auto;
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &-white {}
+      }
+    }
+  }
+}
