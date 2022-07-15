@@ -12,6 +12,13 @@ $img_acf_alt_text = get_post_meta($img_acf, '_wp_attachment_image_alt', true);
 $img_acf_title = get_the_title($img_acf);
 // $img_acf_caption = get_the_excerpt($img_acf);
 
+$hero_overlay = get_sub_field('hero_overlay');
+if ($hero_overlay) {
+    $hero_class = "hero-overlay";
+} else {
+    $hero_class = "";
+}
+
 $prepend_text = get_sub_field('prepend_text');
 $title = get_sub_field('title');
 $content_image = get_sub_field('content_image');
@@ -29,8 +36,7 @@ $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $mar
 <?php if (!empty($img_acf)) { ?>
     <div class="<?php echo $block_name . " " . $spacing; ?>">
 
-
-        <picture>
+        <picture class="<?php echo $hero_class; ?>">
             <img src="<?php echo esc_url($img_acf_src[0]); ?>" title="<?php echo esc_attr($img_acf_title); ?>" srcset="<?php echo esc_attr($img_acf_srcset); ?>" sizes="<?php echo esc_attr($img_acf_srcset_sizes); ?>" alt="<?php echo $img_acf_alt_text ?>" />
         </picture>
 
