@@ -1,0 +1,140 @@
+{
+    "key": "group_62b390e9960c6",
+    "title": "Block Padding & Margins",
+    "fields": [
+        {
+            "key": "field_62b3910236f3a",
+            "label": "Padding Top",
+            "name": "padding_top",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "small": "Small",
+                "medium": "Medium",
+                "large": "Large"
+            },
+            "default_value": "none",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_62b3913236f3b",
+            "label": "Padding Bottom",
+            "name": "padding_bottom",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "small": "Small",
+                "medium": "Medium",
+                "large": "Large"
+            },
+            "default_value": "none",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_62b3913f36f3d",
+            "label": "Margin Top",
+            "name": "margin_top",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "small": "Small",
+                "medium": "Medium",
+                "large": "Large"
+            },
+            "default_value": "none",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_62b3914736f3e",
+            "label": "Margin Bottom",
+            "name": "margin_bottom",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "small": "Small",
+                "medium": "Medium",
+                "large": "Large"
+            },
+            "default_value": "none",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1657895499
+}
