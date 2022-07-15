@@ -64,9 +64,12 @@
           text-transform: uppercase;
           font-family: $header-font;
           text-decoration: none;
+          transition: all 0.3s ease;
 
           &:hover {
             text-decoration: none;
+            background: $ada-orange;
+          color: $lake;
           }
 
           &-white {
@@ -98,6 +101,26 @@
         .content {
           p.body-copy {
             color: $lake;
+          }
+        }
+      }
+
+      .cta-container {
+        flex: 1 0 100%;
+        display: flex;
+        justify-content: center;
+        padding: 60px 0 0 0;
+  
+        a {
+          &.cta {
+
+  
+            &:hover {
+              text-decoration: none;
+              background: $juniper;
+              color: $lake;
+            }
+  
           }
         }
       }

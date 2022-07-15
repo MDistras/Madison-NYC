@@ -68,12 +68,14 @@
         flex-direction: column;
         flex: 1 0 100%;
 
-        @include respond (large-up) {
-          flex: 1 0 50%;
+        @include respond (medium-up) {
+          flex: 1 0 calc(50% - 20px);
+          padding-right:20px;
         }
 
         @include respond (large-up) {
-          flex: 1 0 33.33%;
+          flex: 1 0 calc(33.33% - 20px);
+          padding-right:20px;
         }
 
         figure {

@@ -24,7 +24,20 @@
 
 	<?php
 	$logo = get_field('logo', 'option');
+	$site_subtitle = get_field('site_subtitle', 'option');
 	?>
+
+	<div class="loader">
+		<?php if (!empty($logo)) { ?>
+			<figure>
+				<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['title']; ?>" />
+				<?php if (!empty($site_subtitle)) { ?>
+					<figcaption><?php echo $site_subtitle; ?></figcaption>
+				<?php } ?>
+			</figure>
+		<?php } ?>
+	</div>
+
 
 	<header>
 		<div class="container">

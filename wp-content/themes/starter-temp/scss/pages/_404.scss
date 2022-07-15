@@ -46,6 +46,7 @@
 
         background: $sand;
         color: $lake;
+        transition: all 0.3s ease;
 
         @include respond (medium-up) {
           margin: 10px auto 10px 0;
@@ -54,6 +55,8 @@
 
         &:hover {
           text-decoration: none;
+          background: $ada-orange;
+          color: $lake;
         }
 
         &-white {}

@@ -26,6 +26,9 @@
       }
       a {
         position:relative;
+        width:100%;
+        height:100%;
+        display:block;
         &:hover, &:focus {
           figure img {
             transform:scale(1.15)

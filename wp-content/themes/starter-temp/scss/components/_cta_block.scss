@@ -12,7 +12,15 @@
       a.cta {
         background: $sand;
         color: $lake;
+        transition: all 0.3s ease;
+
+        &:hover,
+        &:focus {
+          background: $ada-orange;
+          color: $lake;
+        }
       }
+
     }
 
     &-light {
@@ -25,6 +33,13 @@
       a.cta {
         background: $lake;
         color: $sand;
+        transition: all 0.3s ease;
+
+        &:hover,
+        &:focus {
+          background: $juniper;
+          color: $lake;
+        }
       }
     }
   }

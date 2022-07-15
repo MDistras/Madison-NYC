@@ -166,6 +166,8 @@
               background: $lake;
               color: $sand;
 
+        transition: all 0.3s ease;
+
               @include respond (medium-up) {
                 margin: 0 15px;
                 flex: 0 1 auto;
@@ -173,6 +175,8 @@
 
               &:hover {
                 text-decoration: none;
+                background: $juniper;
+          color: $lake;
               }
 
               &-white {}

@@ -4,6 +4,9 @@
   width:100%;
 
   .container {
+    @include respond (large-up) {
+      max-width:960px;
+    }
 
     .slick-list {
       @include respond (large-up) {
@@ -109,16 +112,22 @@
       border: 0;
       transition: all 0.3s ease;
       position:absolute;
-      top:50%;
+      top:47%;
       z-index:2;
       cursor: pointer;
       &.slick-prev {
         background-image: url(../img/icons/icon-chevron-left.svg);
-        left:20px;
+        left:35px;
+        @include respond (large-up) {
+          left:-120px;
+        }
       }
       &.slick-next {
         background-image: url(../img/icons/icon-chevron-right.svg);
-        right:20px;
+        right:35px;
+        @include respond (large-up) {
+          right:-120px;
+        }
       }
     }
   }
