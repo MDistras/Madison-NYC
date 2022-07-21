@@ -1,11 +1,11 @@
 .carousel_block {
   position: relative;
   background: $lake;
-  width:100%;
+  width: 100%;
 
   .container {
     @include respond (large-up) {
-      max-width:960px;
+      max-width: 960px;
     }
 
     .slick-list {
@@ -13,155 +13,174 @@
         margin: 0 -20px;
 
       }
-  }
-
-  .slide {
-    @include respond (large-up) {
-
-    margin: 0 20px;
     }
-    figure {
-      aspect-ratio: 1.41 / 1;
-      // overflow: hidden;
-      opacity: 0.4;
-      transition: all 0.3s ease;
-      position: relative;
 
-      img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-        object-position: center;
+    .slide {
+      @include respond (large-up) {
+
+        margin: 0 20px;
       }
-      
-    }
-    figcaption {
-      position:absolute;
-      bottom:-45px;
-      right:0;
-      transform:translateY(100%);
-      z-index:3;
-      opacity:0;
-      transition:all 0.5s ease;
-    }
 
-    &.slick-current {
       figure {
-        opacity: 1;
-        figcaption {
-          opacity:1;
+        aspect-ratio: 1.41 / 1;
+        // overflow: hidden;
+        opacity: 0.4;
+        transition: all 0.3s ease;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          object-position: center;
+        }
+
+      }
+
+      figcaption {
+        position: absolute;
+        bottom: -36px;
+        right: 0;
+        transform: translateY(100%);
+        z-index: 3;
+        opacity: 0;
+        transition: all 0.5s ease;
+        font-size:14px;
+        @include respond(large-up) {
+        bottom: -42px;
+        font-size:18px;
         }
       }
-    }
-  }
 
-  &.slick-slider {
-    .slick-list {
-      overflow: visible;
-    }
-    ul.slick-dots {
-      list-style: none;
-      margin-top:45px;
+      &.slick-current {
+        figure {
+          opacity: 1;
 
-      li {
-        display: inline-block;
-        margin-right: 20px;
-
-        &:last-child {
-          margin-right: 0;
-        }
-
-        button {
-          font-size: 0;
-          background-image: url(../img/other/slick-dot.svg);
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-color: transparent;
-          text-indent: -9999px;
-          overflow: hidden;
-          width: 16px;
-          height: 21px;
-          outline: none;
-          border: 0;
-          transition: all 0.3s ease;
-          cursor: pointer;
-        }
-
-        &.slick-active {
-          button {
-            background-image: url(../img/other/slick-dot-active.svg);
+          figcaption {
+            opacity: 1;
           }
         }
       }
     }
 
-    button.slick-arrow {
-      font-size: 0;
-      // background-image: url(../img/icons/icon-chevron.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: transparent;
-      text-indent: -9999px;
-      overflow: hidden;
-      width: 23px;
-      height: 45px;
-      outline: none;
-      border: 0;
-      transition: all 0.3s ease;
-      position:absolute;
-      top:47%;
-      z-index:2;
-      cursor: pointer;
-      &.slick-prev {
-        background-image: url(../img/icons/icon-chevron-left.svg);
-        left:35px;
-        @include respond (large-up) {
-          left:-120px;
+    &.slick-slider {
+      .slick-list {
+        overflow: visible;
+      }
+
+      ul.slick-dots {
+        list-style: none;
+        margin-top: 45px;
+
+        li {
+          display: inline-block;
+          margin-right: 20px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          button {
+            font-size: 0;
+            background-image: url(../img/other/slick-dot.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: transparent;
+            text-indent: -9999px;
+            overflow: hidden;
+            width: 16px;
+            height: 21px;
+            outline: none;
+            border: 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+          }
+
+          &.slick-active {
+            button {
+              background-image: url(../img/other/slick-dot-active.svg);
+            }
+          }
         }
       }
-      &.slick-next {
-        background-image: url(../img/icons/icon-chevron-right.svg);
-        right:35px;
-        @include respond (large-up) {
-          right:-120px;
+
+      button.slick-arrow {
+        font-size: 0;
+        // background-image: url(../img/icons/icon-chevron.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: transparent;
+        text-indent: -9999px;
+        overflow: hidden;
+        width: 23px;
+        height: 45px;
+        outline: none;
+        border: 0;
+        transition: all 0.3s ease;
+        position: absolute;
+        top: 50%;
+        transform:translateY(calc(-50% - 25px));
+        z-index: 2;
+        cursor: pointer;
+
+        &.slick-prev {
+          background-image: url(../img/icons/icon-chevron-left.svg);
+          left: 35px;
+
+          @include respond (large-up) {
+            left: -120px;
+          }
+        }
+
+        &.slick-next {
+          background-image: url(../img/icons/icon-chevron-right.svg);
+          right: 35px;
+
+          @include respond (large-up) {
+            right: -120px;
+          }
         }
       }
     }
+
+
   }
 
   &.style {
     &-light {
-      background:$sand;
-      color:$lake;
+      background: $sand;
+      color: $lake;
 
       .container {
         &.slick-slider {
           .slick-list {
             overflow: visible;
           }
+
           ul.slick-dots {
             list-style: none;
-            margin-top:45px;
+            margin-top: 45px;
+
             &.container {
-              padding-left:0;
-              padding-right:0;
+              padding-left: 0;
+              padding-right: 0;
             }
-      
+
             li {
               display: inline-block;
               margin-right: 20px;
-      
+
               &:last-child {
                 margin-right: 0;
               }
-      
+
               button {
                 background-image: url(../img/other/slick-light-dot.svg);
               }
-      
+
               &.slick-active {
                 button {
                   background-image: url(../img/other/slick-light-dot-active.svg);
@@ -169,19 +188,26 @@
               }
             }
           }
-      
+
           button.slick-arrow {
             cursor: pointer;
+
             &.slick-prev {
               background-image: url(../img/icons/icon-light-chevron-left.svg);
             }
+
             &.slick-next {
               background-image: url(../img/icons/icon-light-chevron-right.svg);
+            }
+          }
+
+          .slide {
+            figcaption {
+              color:$lake;
             }
           }
         }
       }
     }
   }
-}
 }

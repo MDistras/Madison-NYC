@@ -1,7 +1,8 @@
 .text_block {
   background:$lake;
   p {
-    width:100%;
+    // width:100%;
+    display:block;
     max-width:800px;
     margin-left:auto;
     margin-right:auto;

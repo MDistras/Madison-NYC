@@ -13,7 +13,7 @@ $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $mar
 ?>
 
 <?php if ($content) { ?>
-    <div class="<?php echo $block_name . " " . $spacing . " " . $style; ?>">
+    <div class="flex-block <?php echo $block_name . " " . $spacing . " " . $style; ?>">
         <p class="body-copy">
             <?php echo $content; ?>
         </p>

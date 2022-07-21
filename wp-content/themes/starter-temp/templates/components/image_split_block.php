@@ -14,7 +14,7 @@ $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $mar
 ?>
 
 <?php if ($image_one) { ?>
-    <div class="<?php echo $block_name . " " . $spacing . " " . $style; ?>">
+    <div class="flex-block <?php echo $block_name . " " . $spacing . " " . $style; ?>">
         <div class="container">
             <?php if (!empty($image_one)) { ?>
                 <figure>

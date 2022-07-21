@@ -1,17 +1,39 @@
 .hero_header_block {
   position: relative;
+  z-index:1;
+  overflow-x:hidden;
 
   picture {
     display: block;
     width: 100%;
-    height: 90vh;
-    max-height: 70vh;
+    height: 100vh;
+    max-height: 100vh;
     overflow: hidden;
     min-height: 500px;
     position:relative;
 
     @include respond (large-up) {
-      max-height: 90vh;
+      max-height: 100vh;
+    }
+
+    &:after {
+      content:"";
+      display:block;
+      background-image:url(../img/icons/icon-down-long-arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      width:20px;
+      height:60px;
+      margin:20px auto;
+      position:absolute;
+      bottom:20px;
+      right:20px;
+      z-index:1;
+      animation: bounceDown 4s infinite;
+      @include respond(large-up) {
+        bottom:160px;
+      right:70px;
+      }
     }
 
     img {

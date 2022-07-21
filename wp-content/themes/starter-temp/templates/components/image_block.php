@@ -27,7 +27,7 @@ $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $mar
 ?>
 
 <?php if (!empty($img_acf)) { ?>
-    <div class="<?php echo $block_name . " " . $spacing . " " . $style; ?>">
+    <div class="flex-block <?php echo $block_name . " " . $spacing . " " . $style; ?>">
         <?php if ($width == "contained") {
             echo "<div class='container'>";
         } ?>

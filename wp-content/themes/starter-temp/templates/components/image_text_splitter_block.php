@@ -48,7 +48,7 @@ $margin_bottom = "margin-bottom-" . get_sub_field('spacing_margin_bottom');
 $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $margin_bottom;
 ?>
 
-<div class="<?php echo $block_name . " " . $spacing . " " . $style . " " . $text_alignment; ?>">
+<div class="flex-block <?php echo $block_name . " " . $spacing . " " . $style . " " . $text_alignment; ?>">
     <div class='container'>
 
         <div class="content-container">

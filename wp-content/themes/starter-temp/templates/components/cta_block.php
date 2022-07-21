@@ -13,7 +13,7 @@ $margin_bottom = "margin-bottom-" . get_sub_field('spacing_margin_bottom');
 $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $margin_bottom;
 ?>
 
-<div class="<?php echo $block_name . " " . $spacing . " " . $style; ?>">
+<div class="flex-block <?php echo $block_name . " " . $spacing . " " . $style; ?>">
     <div class="container">
         <?php if (!empty($title)) { ?>
             <p class="title text-header-xl text-center"><?php echo $title; ?></p>

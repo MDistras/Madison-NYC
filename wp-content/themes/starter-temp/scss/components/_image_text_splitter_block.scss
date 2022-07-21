@@ -19,10 +19,12 @@
         .subtitle-container {
           p {
             &.subtitle_one {
+              opacity:0;
               color: $juniper !important;
             }
 
             &.subtitle_two {
+              opacity:0;
               color: $lake !important;
             }
           }
@@ -169,4 +171,19 @@
 
 
   }
+
+  &.active {
+     p.subtitle.subtitle_one {
+     animation-name: fadeInRight;
+     animation-duration: 0.75s;
+     animation-fill-mode: forwards;
+     animation-delay: 0.75s;
+   }
+     p.subtitle.subtitle_two {
+     animation-name: fadeInRight;
+     animation-duration: 0.75s;
+     animation-fill-mode: forwards;
+     animation-delay: 1.2s;
+   }
+ }
 }

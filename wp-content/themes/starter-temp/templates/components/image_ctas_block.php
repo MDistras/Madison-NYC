@@ -11,7 +11,7 @@ $margin_bottom = "margin-bottom-" . get_sub_field('spacing_margin_bottom');
 $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $margin_bottom;
 ?>
 
-<div class="<?php echo $block_name . " " . $spacing; ?>">
+<div class="flex-block <?php echo $block_name . " " . $spacing; ?>">
     <div class="container image-ctas">
         <?php if (have_rows('image_ctas')) { ?>
             <?php while (have_rows('image_ctas')) : the_row();

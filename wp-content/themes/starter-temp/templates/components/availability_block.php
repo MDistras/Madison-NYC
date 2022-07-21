@@ -5,6 +5,7 @@ $block_name = "availability_block";
 $prepend_title = get_sub_field('prepend_title');
 $title = get_sub_field('title');
 $image = get_sub_field('image'); // SVG code output
+$image_mobile = get_sub_field('image_mobile'); // SVG code output
 
 
 // Spacing
@@ -24,8 +25,13 @@ $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $mar
             <p class="title text-header-xl text-center"><?php echo $title; ?></p>
         <?php } ?>
         <?php if (!empty($image)) { ?>
-            <div class="svg-container">
+            <div class="svg-container desktop">
                 <?php echo $image; ?>
+            </div>
+        <?php } ?>
+        <?php if (!empty($image_mobile)) { ?>
+            <div class="svg-container mobile">
+                <?php echo $image_mobile; ?>
             </div>
         <?php } ?>
         <?php if (have_rows('image_modals')) {
@@ -63,6 +69,7 @@ $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $mar
                                 <div class="cta-container">
                                     <?php
                                     while (have_rows('ctas')) : the_row();
+                                        $icon = get_sub_field('icon');
                                         $cta = get_sub_field('link');
                                         if ($cta) {
                                             $cta_url = $cta['url'];
@@ -70,7 +77,14 @@ $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $mar
                                             $cta_target = $cta['target'] ? $cta['target'] : '_self';
                                         }
                                     ?>
-                                        <a class="cta" href="<?php echo esc_url($cta_url); ?>" target="<?php echo esc_attr($cta_target); ?>"><?php echo esc_html($cta_title); ?></a>
+                                        <a class="cta" href="<?php echo esc_url($cta_url); ?>" target="<?php echo esc_attr($cta_target); ?>">
+                                            <?php if (!empty($icon)) { ?>
+                                                <figure class="icon">
+                                                    <img src="<?php echo $icon['url']; ?>" alt="" class="inline-svg" />
+                                                </figure>
+                                            <?php } ?>
+                                            <?php echo esc_html($cta_title); ?>
+                                        </a>
                                     <?php endwhile; ?>
                                 </div>
                             <?php

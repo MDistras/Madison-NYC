@@ -38,10 +38,12 @@
 
         &.subtitle_one {
           color: $ada-orange;
+          opacity: 0;
         }
 
         &.subtitle_two {
           color: $sand;
+          opacity: 0;
 
           @include respond (large-up) {
             padding-left: 27px;
@@ -69,7 +71,7 @@
           &:hover {
             text-decoration: none;
             background: $ada-orange;
-          color: $lake;
+            color: $lake;
           }
 
           &-white {
@@ -98,6 +100,7 @@
             }
           }
         }
+
         .content {
           p.body-copy {
             color: $lake;
@@ -110,20 +113,35 @@
         display: flex;
         justify-content: center;
         padding: 60px 0 0 0;
-  
+
         a {
           &.cta {
 
-  
+
             &:hover {
               text-decoration: none;
               background: $juniper;
               color: $lake;
             }
-  
+
           }
         }
       }
+    }
+  }
+
+  &.active {
+    .container .subtitle-container p.subtitle.subtitle_one {
+      animation-name: fadeInRight;
+      animation-duration: 0.75s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.75s;
+    }
+    .container .subtitle-container p.subtitle.subtitle_two {
+      animation-name: fadeInRight;
+      animation-duration: 0.75s;
+      animation-fill-mode: forwards;
+      animation-delay: 1.2s;
     }
   }
 }

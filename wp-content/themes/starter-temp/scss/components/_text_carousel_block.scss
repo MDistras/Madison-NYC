@@ -36,10 +36,12 @@
         }
 
         &.subtitle_one {
+          opacity:0;
           color: $ada-orange;
         }
 
         &.subtitle_two {
+          opacity:0;
           color: $sand;
 
           @include respond (large-up) {
@@ -79,12 +81,12 @@
         }
 
         figure {
-          max-width: 50px;
-          height: auto;
+          width: auto;
+          height: 50px;
 
           img {
-            width: 100%;
-            height: auto;
+            width: auto;
+            height: 100%;
           }
         }
       }
@@ -226,4 +228,19 @@
       }
     }
   }
+
+  &.active {
+    .subtitle-container p.subtitle.subtitle_one {
+     animation-name: fadeInRight;
+     animation-duration: 0.75s;
+     animation-fill-mode: forwards;
+     animation-delay: 0.75s;
+   }
+    .subtitle-container p.subtitle.subtitle_two {
+     animation-name: fadeInRight;
+     animation-duration: 0.75s;
+     animation-fill-mode: forwards;
+     animation-delay: 1.2s;
+   }
+ }
 }

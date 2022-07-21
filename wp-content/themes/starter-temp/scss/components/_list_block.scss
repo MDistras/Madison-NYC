@@ -20,10 +20,12 @@
       }
 
       &.subtitle_one {
+        opacity: 0;
         color: $ada-orange;
       }
 
       &.subtitle_two {
+        opacity: 0;
         color: $sand;
 
         @include respond (large-up) {
@@ -139,5 +141,20 @@
     }
 
     
+  }
+
+  &.active {
+     .subtitle-container p.subtitle.subtitle_one {
+      animation-name: fadeInRight;
+      animation-duration: 0.75s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.75s;
+    }
+     .subtitle-container p.subtitle.subtitle_two {
+      animation-name: fadeInRight;
+      animation-duration: 0.75s;
+      animation-fill-mode: forwards;
+      animation-delay: 1.2s;
+    }
   }
 }
