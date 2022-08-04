@@ -3,6 +3,7 @@ get_header();
 global $post;
 
 $title = get_field("title");
+$contact_image = get_field("contact_image");
 ?>
 
 <div class="contact-us">
@@ -31,6 +32,13 @@ $title = get_field("title");
 			<?php endwhile;
 			} ?>
 		</div>
+		<?php if (!empty($contact_image)) { ?>
+			<div class="contact-image">
+				<figure>
+					<img src="<?php echo $contact_image['url']; ?>" alt="<?php echo $contact_image['alt']; ?>" />
+				</figure>
+			</div>
+		<?php } ?>
 	</div>
 </div>
 

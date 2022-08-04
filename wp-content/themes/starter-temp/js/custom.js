@@ -196,5 +196,10 @@ jQuery(document).ready(function ($) {
 
   });
 
+
+  $('button.show-all').click(function () {
+    $(this).closest(".list-items").toggleClass('show-all');
+  });
+
   
 });

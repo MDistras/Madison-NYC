@@ -12,6 +12,16 @@ $img_acf_alt_text = get_post_meta($img_acf, '_wp_attachment_image_alt', true);
 $img_acf_title = get_the_title($img_acf);
 // $img_acf_caption = get_the_excerpt($img_acf);
 
+$mob_img_acf = get_sub_field('hero_image_mobile');
+$mob_img_acf_size = 'full';
+$mob_img_acf_src = wp_get_attachment_image_src($mob_img_acf, $mob_img_acf_size);
+$mob_img_acf_srcset = wp_get_attachment_image_srcset($mob_img_acf, $mob_img_acf_size);
+$mob_img_acf_srcset_sizes = wp_get_attachment_image_sizes($mob_img_acf, $mob_img_acf_size);
+$mob_img_acf_alt_text = get_post_meta($mob_img_acf, '_wp_attachment_image_alt', true);
+// $img_acf_meta = wp_get_attachment_metadata($img_acf);
+$mob_img_acf_title = get_the_title($mob_img_acf);
+// $img_acf_caption = get_the_excerpt($img_acf);
+
 $hero_overlay = get_sub_field('hero_overlay');
 if ($hero_overlay) {
     $hero_class = "hero-overlay";
@@ -33,12 +43,22 @@ $margin_bottom = "margin-bottom-" . get_sub_field('spacing_margin_bottom');
 $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $margin_bottom;
 ?>
 
-<?php if (!empty($img_acf)) { ?>
+<?php if (!empty($img_acf) || !empty($mob_img_acf)) { ?>
     <div class="<?php echo $block_name . " " . $spacing; ?>">
 
-        <picture class="<?php echo $hero_class; ?>">
-            <img src="<?php echo esc_url($img_acf_src[0]); ?>" title="<?php echo esc_attr($img_acf_title); ?>" srcset="<?php echo esc_attr($img_acf_srcset); ?>" sizes="<?php echo esc_attr($img_acf_srcset_sizes); ?>" alt="<?php echo $img_acf_alt_text ?>" />
-        </picture>
+        <?php if (!empty($mob_img_acf)) { ?>
+            <picture class="<?php echo $hero_class; ?> desktop">
+                <img src="<?php echo esc_url($img_acf_src[0]); ?>" title="<?php echo esc_attr($img_acf_title); ?>" srcset="<?php echo esc_attr($img_acf_srcset); ?>" sizes="<?php echo esc_attr($img_acf_srcset_sizes); ?>" alt="<?php echo $img_acf_alt_text ?>" />
+            </picture>
+            <picture class="<?php echo $hero_class; ?> mobile">
+                <img src="<?php echo esc_url($mob_img_acf_src[0]); ?>" title="<?php echo esc_attr($mob_img_acf_title); ?>" srcset="<?php echo esc_attr($mob_img_acf_srcset); ?>" sizes="<?php echo esc_attr($mob_img_acf_srcset_sizes); ?>" alt="<?php echo $mob_img_acf_alt_text ?>" />
+            </picture>
+        <?php } else { ?>
+            <picture class="<?php echo $hero_class; ?>">
+                <img src="<?php echo esc_url($img_acf_src[0]); ?>" title="<?php echo esc_attr($img_acf_title); ?>" srcset="<?php echo esc_attr($img_acf_srcset); ?>" sizes="<?php echo esc_attr($img_acf_srcset_sizes); ?>" alt="<?php echo $img_acf_alt_text ?>" />
+            </picture>
+        <?php } ?>
+
 
         <div class="content">
             <?php if (!empty($prepend_text)) {
@@ -57,7 +77,5 @@ $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $mar
                 echo "<p class='append'>" . $append_text . "</p>";
             } ?>
         </div>
-
-
     </div>
 <?php } ?>

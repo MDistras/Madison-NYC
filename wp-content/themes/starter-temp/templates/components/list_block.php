@@ -24,7 +24,7 @@ $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $mar
 <div class="flex-block <?php echo $block_name . " " . $spacing; ?>">
     <?php if (!empty($subtitle)) { ?>
         <div class="container">
-            <div class="subtitle-container padding-bottom-large">
+            <div class="subtitle-container <?php echo $padding_bottom; ?>">
                 <?php if (!empty($subtitle_line_1)) { ?>
                     <p class="subtitle subtitle_one"><?php echo $subtitle_line_1; ?></p>
                 <?php } ?>
@@ -62,8 +62,10 @@ $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $mar
         <?php endwhile;
         } ?>
 
+        <button class="cta show-all">View more</button>
+
         <?php if ($include_cutout) { ?>
-            <div class="cutout">aaa</div>
+            <div class="cutout"></div>
         <?php } ?>
 
     </div>

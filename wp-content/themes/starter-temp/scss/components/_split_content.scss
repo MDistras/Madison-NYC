@@ -45,9 +45,9 @@
           color: $sand;
           opacity: 0;
 
-          @include respond (large-up) {
-            padding-left: 27px;
-          }
+          // @include respond (large-up) {
+          //   padding-left: 27px;
+          // }
         }
       }
     }

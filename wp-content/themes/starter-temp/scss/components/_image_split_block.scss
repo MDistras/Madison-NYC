@@ -14,9 +14,9 @@
     figure {
       flex: 1 0 100%;
 
-      @include respond(large-up) {
-        flex: 1 0 50%;
-      }
+      // @include respond(large-up) {
+      //   flex: 1 0 50%;
+      // }
 
       img {
         width: 100%;
@@ -27,7 +27,7 @@
 
         @include respond(large-up) {
           order: 1;
-
+        flex: 1 0 45%;
         }
       }
 
@@ -36,6 +36,7 @@
 
         @include respond(large-up) {
           order: 2;
+        flex: 1 0 55%;
 
         }
 

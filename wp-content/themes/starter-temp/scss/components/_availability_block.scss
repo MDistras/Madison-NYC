@@ -18,9 +18,10 @@
       line-height: 58px;
       text-align: center;
       color: $white;
+
       @include respond (large-up) {
         font-size: 80px;
-      line-height: 104px;
+        line-height: 104px;
       }
     }
 
@@ -29,62 +30,115 @@
       line-height: 24px;
       text-align: center;
       color: $white;
+
       @include respond(large-up) {
         font-size: 40px;
-      line-height: 40px;
+        line-height: 40px;
       }
     }
   }
 
   .svg-container {
     padding: 35px 0;
+
     &.mobile {
-      display:block;
-      @include respond(large-up) {
-        display:none;
-      }
-    }
-    &.desktop {
-      display:none;
-      @include respond(large-up) {
-        display:block;
-      }
-    }
-
-    svg {
       display: block;
-      margin-left: auto;
-      margin-right: auto;
-      // g {
-      //   path:nth-child(2n-1) {
-      //     fill: $juniper;
-      //     transition: all 0.3s ease;
-      //     cursor: pointer;
 
-      //     &:hover {
-      //       fill: $ada-orange;
-      //     }
-      //   }
-      // }
-      .floor, .cls-7 {
-        fill: $juniper;
-        transition: all 0.3s ease;
-        cursor: pointer;
+      @include respond(large-up) {
+        display: none;
+      }
+    }
 
-        &:hover {
-          fill: $ada-orange;
-        }
+    &.desktop {
+      display: none;
 
-        &.occupied, &.unavailable {
-          fill: $lake;
+      @include respond(large-up) {
+        display: block;
+      }
+    }
 
+    
+
+    &.desktop {
+      svg {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        // g {
+        //   path:nth-child(2n-1) {
+        //     fill: $juniper;
+        //     transition: all 0.3s ease;
+        //     cursor: pointer;
+  
+        //     &:hover {
+        //       fill: $ada-orange;
+        //     }
+        //   }
+        // }
+        .floor,
+        .cls-7 {
+          fill: $juniper;
+          transition: all 0.3s ease;
+          cursor: pointer;
+  
           &:hover {
+            fill: $ada-orange;
+          }
+  
+          &.occupied,
+          &.unavailable {
             fill: $lake;
+  
+            &:hover {
+              fill: $lake;
+            }
           }
         }
+  
+        .cls-9 {
+          pointer-events: none;
+        }
       }
-      .cls-9 {
-        pointer-events: none;
+    }
+    &.mobile {
+      svg {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        // g {
+        //   path:nth-child(2n-1) {
+        //     fill: $juniper;
+        //     transition: all 0.3s ease;
+        //     cursor: pointer;
+  
+        //     &:hover {
+        //       fill: $ada-orange;
+        //     }
+        //   }
+        // }
+        .floor,
+        .cls-2 {
+          fill: $juniper;
+          transition: all 0.3s ease;
+          cursor: pointer;
+  
+          &:hover {
+            fill: $ada-orange;
+          }
+  
+          &.occupied,
+          &.unavailable {
+            fill: $lake;
+  
+            &:hover {
+              fill: $lake;
+            }
+          }
+        }
+  
+        .cls-4 {
+          pointer-events: none;
+        }
       }
     }
   }
@@ -173,20 +227,20 @@
 
         @include respond(large-up) {
           flex: 1 0 60%;
-          max-height:80vh;
+          max-height: 80vh;
         }
 
         figure {
           width: 100%;
-          height:100%;
+          height: 100%;
 
           img {
             width: 100%;
-            height:100%;
+            height: 100%;
             object-fit: contain;
-            object-position:top center;
+            object-position: top center;
           }
-          
+
         }
 
         .cta-container {
@@ -208,8 +262,8 @@
               flex: 0 1 100%;
               width: max-content;
               text-align: center;
-              display:inline-flex;
-              align-items:center;
+              display: inline-flex;
+              align-items: center;
 
               background: $lake;
               color: $sand;
@@ -225,27 +279,31 @@
                 text-decoration: none;
                 background: $juniper;
                 color: $lake;
+
                 figure.icon svg path {
-                  fill:$lake;
+                  fill: $lake;
                 }
               }
 
               figure.icon {
-                display:inline;
-                max-width:26px;
-                max-height:20px;
-                margin-right:10px;
+                display: inline;
+                max-width: 26px;
+                max-height: 20px;
+                margin-right: 10px;
+
                 img {
-                  width:100%;
-                  height:100%;
+                  width: 100%;
+                  height: 100%;
                   object-fit: contain;
-                  object-position:center;
+                  object-position: center;
                 }
+
                 svg {
-                  height:100%;
-                  width:100%;
+                  height: 100%;
+                  width: 100%;
+
                   path {
-              transition: all 0.3s ease;
+                    transition: all 0.3s ease;
 
                   }
                 }

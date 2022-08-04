@@ -59,5 +59,17 @@
         }
       }
     }
+
+    .contact-image {
+      flex: 1 0 100%;
+      display: flex;
+      flex-wrap: wrap;
+      @include respond(large-up) {
+        flex:1 0 50%;
+        margin-left:50%;
+        margin-top:35px;
+      }
+
+    }
   }
 }

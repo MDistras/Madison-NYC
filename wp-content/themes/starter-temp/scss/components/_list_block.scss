@@ -28,9 +28,9 @@
         opacity: 0;
         color: $sand;
 
-        @include respond (large-up) {
-          padding-left: 60px;
-        }
+        // @include respond (large-up) {
+        //   padding-left: 60px;
+        // }
       }
     }
 
@@ -55,6 +55,19 @@
 
         &:nth-child(even) {
           padding-left: 35px;
+        }
+      }
+
+      display:block;
+
+      @include respond(large-up) {
+        display: block;
+      }
+
+      &:nth-child(n+4) {
+        display: none;
+        @include respond(large-up) {
+          display: block;
         }
       }
 
@@ -85,10 +98,65 @@
         line-height: 33px;
         font-weight: 400;
 
+        p {
+          max-width:680px;
+          @include respond(large-up) {
+            max-width:100%;
+          }
+        }
+
         a {
           color: $white;
         }
+        ul, ol {
+          padding-left:30px;
+        }
 
+      }
+    }
+
+    &.show-all {
+        .list-item {
+        display:block;
+        }
+        button.show-all {
+          display:none;
+        }
+    }
+    a, button {
+      &.cta {
+        padding: 15px 25px;
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: uppercase;
+        font-family: $header-font;
+        text-decoration: none;
+        margin: 10px 15px;
+        flex: 0 1 100%;
+        width: max-content;
+        text-align: center;
+        border:0;
+
+        background: $sand;
+          color: $lake;
+
+          transition:all 0.3s ease;
+          cursor:pointer;
+
+          display:inline-block;
+        @include respond (medium-up) {
+          margin: 0 15px;
+          flex: 0 1 auto;
+          display:none;
+        }
+
+        &:hover {
+          text-decoration: none;
+          background: $ada-orange;
+          color: $lake;
+        }
+
+        &-white {}
       }
     }
 
@@ -101,12 +169,16 @@
       right: 0;
       width: 50%;
       aspect-ratio: 1 / 1;
-      margin:30px 0 40px;
+      margin: 30px 0 40px;
+
+      @include respond (medium-only) {
+        display:none;
+      }
 
       @include respond(large-up) {
         width: 25%;
         position: absolute;
-        margin:0;
+        margin: 0;
       }
     }
 
@@ -130,27 +202,29 @@
           }
         }
       }
+
       &-two {
         .cutout {
           @include respond (large-up) {
-            width:15%;
-            transform:translate(100%, -70%)
+            width: 15%;
+            transform: translate(100%, -70%)
           }
         }
       }
     }
 
-    
+
   }
 
   &.active {
-     .subtitle-container p.subtitle.subtitle_one {
+    .subtitle-container p.subtitle.subtitle_one {
       animation-name: fadeInRight;
       animation-duration: 0.75s;
       animation-fill-mode: forwards;
       animation-delay: 0.75s;
     }
-     .subtitle-container p.subtitle.subtitle_two {
+
+    .subtitle-container p.subtitle.subtitle_two {
       animation-name: fadeInRight;
       animation-duration: 0.75s;
       animation-fill-mode: forwards;

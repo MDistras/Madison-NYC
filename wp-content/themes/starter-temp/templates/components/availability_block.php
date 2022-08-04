@@ -105,10 +105,15 @@ $spacing = $padding_top . " " . $padding_bottom . " " . $margin_top . " " . $mar
         while (have_rows('image_modals')) : the_row();
             $svg_id = get_sub_field('id');
             $modal_id = "image-modal-" . get_sub_field('id');
-
     ?>
 
-            jQuery("#<?php echo $svg_id; ?>").on("click", function() {
+            <?php if (get_sub_field('disable_floor')) { ?>
+                $(function() {
+                    jQuery("#<?php echo $svg_id; ?>").addClass("unavailable");
+                });
+            <?php } ?>
+
+            jQuery(".desktop #<?php echo $svg_id; ?>, .mobile #<?php echo $svg_id; ?>").on("click", function() {
                 jQuery("#<?php echo $modal_id; ?>").addClass("active");
                 jQuery("body").addClass("modal-active");
             });

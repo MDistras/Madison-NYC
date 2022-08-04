@@ -1,5 +1,6 @@
 .text_carousel_block {
   background: $lake;
+  overflow-x:hidden;
 
   .container {
     display: flex;
@@ -10,7 +11,7 @@
     }
 
     .subtitle-container {
-      flex: 1 0 100%;
+      flex: 0 1 calc(100% - 90px);
 
       @include respond (large-up) {
         flex: 1 0 50%;
@@ -18,7 +19,7 @@
     }
 
     .subtitle-container {
-      margin-bottom: 45px;
+      // margin-bottom: 45px;
 
       @include respond(large-up) {
         margin-bottom: 0;
@@ -44,9 +45,9 @@
           opacity:0;
           color: $sand;
 
-          @include respond (large-up) {
-            padding-left: 27px;
-          }
+          // @include respond (large-up) {
+          //   padding-left: 27px;
+          // }
         }
       }
     }
